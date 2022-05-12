@@ -181,6 +181,8 @@ Your code should be as coherent to another developer as possible.
 
 - Distribute medals and power ups to the player depending on points
 
+- Build a browser interface for your game
+
 ## Cheat codes &#x2B06; &#x2197; &#x27A1;
 
 **These are suggestions, not answers**
