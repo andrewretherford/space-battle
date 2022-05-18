@@ -4,12 +4,22 @@
 
 ![star wars](https://vignette4.wikia.nocookie.net/starwars/images/6/65/Battle_of_Endor.png/revision/latest?cb=20121216165239)
 
-Use your knowledge of JS objects, loops, and functions to build a **space battle** game. The game will be programmed for, and played in the Chrome console. You will need to use pop-up prompts to get user input.
+Use your knowledge of JS objects, loops, and functions to build a **space battle** game. The game will be programmed for, and played in the Chrome console. You will need to use the built-in `prompt` to get user input, and you may use `console.logs` or `alerts` to relay information to the user.
 
 Planning a program is a challenge unto itself. START SIMPLE. Break the problem down as far as you can and don't move on until the smallest piece works.
 
 Once you've figured out the basics, it's up to you to make the game you want, but remember,
 Your game does not have to be elegant. The only thing that matters is that it works.
+
+## Set Up
+
+1. Fork and clone this repository.
+2. Check out a development branch. 
+3. Create an HTML and JS file and connect the two. 
+4. Load your HTML in the browser. 
+5. Be sure to make frequent commits. 
+
+This assignment is a deliverable. Deliverables are due by the date indicated on your cohort calendar. 
 
 ## Game Requirements
 
@@ -261,3 +271,12 @@ console.log(
 ## Major Hint
 
 If you are super stuck and having a hard time getting started, check out this very basic [skeleton](https://codepen.io/esin87/pen/oNEWBaG?editors=0012) of the game. This version does not meet minimum requirements as it only has one alien ship and its properties are hard-coded.
+
+Please note that this is just ONE programmer's approach to creating this game. Their are many ways to code this out!
+
+## [License](LICENSE)
+
+1. All content is licensed under a CC­BY­NC­SA 4.0 license.
+1. All software code is licensed under GNU GPLv3. For commercial use or
+   alternative licensing, please contact legal@ga.co.
+
