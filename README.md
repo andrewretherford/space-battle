@@ -14,10 +14,11 @@ Your game does not have to be elegant. The only thing that matters is that it wo
 ## Set Up
 
 1. Fork and clone this repository.
-2. Check out a development branch. 
-3. Create an HTML and JS file and connect the two. 
-4. Load your HTML in the browser. 
-5. Be sure to make frequent commits. 
+1. Change into the newly created directory `cd space-battle`.
+1. Create a new `dev` branch: `git checkout -b dev`.
+1. Add an `index.html` and `app.js` with `touch index.html app.js`.
+1. Add your HTML boilerplate and connect the app.js file to it.
+1. Build your app, making frequent commits. When done open a PR with your submission.
 
 This assignment is a deliverable. Deliverables are due by the date indicated on your cohort calendar. 
 
@@ -79,14 +80,8 @@ if (Math.random() < alien[0].accuracy) {
 }
 ```
 
-## Project Set Up & Hints
+## Hints
 
-1. Fork and clone this repository.
-1. Change into the newly created directory `cd space-battle`.
-1. Create a new `dev` branch `git checkout -b dev`.
-1. Add an `index.html` and `app.js` with `touch index.html app.js`.
-1. Add your HTML boilerplate and connect the app.js file to it.
-1. Build your app, making frequent commits. When done open a PR with your submission.
 
 ### HINT: Send a message to the user in the browser
 
@@ -104,7 +99,9 @@ alert('oh hai!');
 const yourAnswer = prompt('Some question', 'A default value goes here');
 ```
 
-You can keep getting input until a certain exists like so:
+Whatever the user enters in response to the `prompt` gets saved to the variable it's assigned to (in the example above, `yourAnswer`). 
+
+You can keep getting input until a certain condition is met using a `while` loop, like so:
 
 ```javascript
 let action = null;
@@ -149,6 +146,7 @@ Keep these five things in mind when planning and coding your game:
 3. When coding, form a solid and testable foundation before building upon it with more functionality. In this case, is there a bug where an alien can attack _after_ it has been destroyed? Better fix that bug before increasing the complexity of the code.
 
 4. When you have a piece of functionality tested and working, **commit it**. Try not to commit broken code. Unsure of when to commit? **Commit when something works**. You want to save working code.
+5. Do it the way you know how first, even if it's messy and brute force. If you have to hard-code all your alien ships, that's fine, as long as you get your app working! Worry about refining your code approach after you meet the minimum features of the project.
 
 ### HINT: Code quality and code sharing
 
@@ -187,11 +185,11 @@ Your code should be as coherent to another developer as possible.
 
 - After every battle you are asked if you want to return to base and recharge your shields.
 
-- Make the players and enemies stronger after each battle
+- Make the players and enemies stronger after each battle.
 
-- Distribute medals and power ups to the player depending on points
+- Distribute medals and power ups to the player depending on points.
 
-- Build a browser interface for your game
+- Build a browser interface for your game using DOM manipulation.
 
 ## Cheat codes &#x2B06; &#x2197; &#x27A1;
 
@@ -268,11 +266,11 @@ console.log(
 );
 ```
 
-## Major Hint
+## Major Spoilers Ahead
 
-If you are super stuck and having a hard time getting started, check out this very basic [skeleton](https://codepen.io/esin87/pen/oNEWBaG?editors=0012) of the game. This version does not meet minimum requirements as it only has one alien ship and its properties are hard-coded.
+If you are super stuck and having a hard time getting started, check out this very basic [skeleton](https://codepen.io/esin87/pen/oNEWBaG?editors=0012) of the game. This version does not meet minimum requirements as it only has one alien ship, and its properties are hard-coded.
 
-Please note that this is just ONE programmer's approach to creating this game. Their are many ways to code this out!
+Please note that this is just ONE programmer's approach to creating this game. There are many ways to code this out!
 
 ## [License](LICENSE)
 
