@@ -257,3 +257,7 @@ console.log(
   'font-style: italic; background: azure; border: 1px solid grey;'
 );
 ```
+
+## Major Hint
+
+If you are super stuck and having a hard time getting started, check out this very basic [skeleton](https://codepen.io/esin87/pen/oNEWBaG?editors=0012) of the game. This version does not meet minimum requirements as it only has one alien ship and its properties are hard-coded.
