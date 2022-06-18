@@ -18,7 +18,7 @@
         // The player wins if all aliens are destroyed
         // The player loses if destroyed
 
-// ship class
+// define ship classes
 
 class Ship {
     constructor(hull, firepower, accuracy){
@@ -80,9 +80,18 @@ class Schwartzenegger extends Ship {
         this.hull -= enemyPower
         if(this.hull <=0) {
             alert('This is the end, your ship breaks up around you as alien lasers pierce your hull! Aliens charge through the debris cloud that was the USS Schwartzenegger, last hope of humanity, and speed toward a defensless planet Earth. The desperate populace can only cower as alien lasers rain destruction down from above, superheating the atmosphere and scouring all life from the planet.')
-            gameOver = true
+            lose()
         }
     }
+}
+
+// define game functions
+
+
+
+function lose() {
+    alert("GAME OVER")
+    gameOver = true
 }
 
 // generate alien ships
@@ -94,7 +103,7 @@ const alienFive = new AlienShip(Math.floor(Math.random() * 4 + 3), Math.floor(Ma
 const alienSix = new AlienShip(Math.floor(Math.random() * 4 + 3), Math.floor(Math.random() * 3 + 2), Math.floor(Math.random() * 3 + 6) * 0.1)
 
 const alienFleet = [alienOne, alienTwo, alienThree, alienFour, alienFive, alienSix]
-console.log(alienFleet)
+// console.log(alienFleet)
 
 // generate ussSchwartzenegger
 const ussSchwartzenegger = new Schwartzenegger(20, 5, .7)
@@ -105,20 +114,26 @@ let gameOver = false
 let playerChoice = ''
 let menu = true
 let prepared = ''
+let repairs = 0
+let confirm = ''
 const numberDecoration = ['st', 'nd', 'rd', 'th', 'th', 'th']
 
 // start game loop
 while(!gameOver) {
     // Intro
-    if(menu == true) {
-        alert("Welcome to the end of the world! The aliens are attacking, and only one hero stands between our precious home and annihilation!  You are humanity's last hope. ")
+    if(menu == true) {  // menu
+        if(repairs == 0) {
+            alert("Welcome to the end of the world! The aliens are attacking, and only one hero stands between our precious home and annihilation!  You are humanity's last hope!")
+        } else {
+            alert(`Welcome back to Starbase One officer. We have repaired your ship and adjusted your weapons output so that you will have enough energy to finish those wretched invaders! You now have ${ussSchwartzenegger.hull} hull points remaining.  Godspeed!`)
+        }
+        prepared = ''
         while(prepared.toLowerCase() !='y' && prepared.toLowerCase() != 'yes'){
             prepared = prompt("Are you prepared to face the alien threat?")
             if(prepared.toLowerCase() == 'n' || prepared.toLowerCase() == 'no') {
                 alert("Alas, Earth's last remaining hero has fled the battlefield along with any hope of survival.  The human race is now extinct!")
-                alert("GAME OVER")
-                gameOver = true
-                break   
+                lose()
+                break
             } 
         }
         menu = false
@@ -126,33 +141,59 @@ while(!gameOver) {
 
     // Turn iterator
     if(gameOver != true) {
-        alienFleet.forEach((alienShip, idx, array) => {
-            alert(`The ${idx + 1}${numberDecoration[idx]} enemy ship approaches. Time to attack!`)
-            while(alienShip.hull > 0 && ussSchwartzenegger.hull > 0){
-                if (ussSchwartzenegger.attack()) {  // ussSchwartzenegger turn
-                    alienShip.gotHit(ussSchwartzenegger.firepower)
-                }
-                
-                if(alienShip.hull > 0) {    // alien turn
-                    if(alienShip.attack()) {
-                        ussSchwartzenegger.gotHit(alienShip.firepower)
+        for(let i = 0; i < alienFleet.length; i++) {
+            if(alienFleet[i].hull > 0) {    // check for dead aliens when returning from base
+                alert(`The ${i + 1}${numberDecoration[i]} enemy ship approaches. Time to attack!`)
+                while(alienFleet[i].hull > 0 && ussSchwartzenegger.hull > 0){
+                    if (ussSchwartzenegger.attack()) {  // ussSchwartzenegger turn
+                        alienFleet[i].gotHit(ussSchwartzenegger.firepower)
+                    }
+                    
+                    if(alienFleet[i].hull > 0) {    // alien turn
+                        if(alienFleet[i].attack()) {
+                            ussSchwartzenegger.gotHit(alienFleet[i].firepower)
+                        }
                     }
                 }
-            }
-            if(idx !== array.length -1) {   // player chooses to fight or retreat if there are still enemies remaining
-                playerChoice = ''
-                while(playerChoice.toLowerCase() != 'fight' && playerChoice.toLowerCase() !='retreat') {
-                    playerChoice = prompt("You have destroyed one of the invaders.  Do you wish to continue the fight or will you retreat and regroup?  Enter 'Fight' to continue, or 'Retreat' to fly home to base.")
-                }                
-                if(playerChoice == 'retreat') {
-                    menu = true
+                if(i !== alienFleet.length -1) {   // player chooses to fight or retreat if there are still enemies remaining
+                    playerChoice = ''
+                    while(playerChoice.toLowerCase() != 'fight' && playerChoice.toLowerCase() !='retreat') {
+                        if(repairs == 0){
+                            playerChoice = prompt(`You have destroyed one of the invaders! You currently have ${ussSchwartzenegger.hull} hull pionts remaining, and there are ${5-i} alien ships still to fight.  You may return to base one time to conduct minor repairs, however doing so will deplete your power cells and force you to set your blasters to 80% of full power for the remainder of the battle. Do you wish to continue the fight or will you retreat and regroup? Enter 'Fight' to continue, or 'Retreat' to dock for repairs.`)
+                        } else {
+                            playerChoice = prompt(`You have destroyed one of the invaders! You currently have ${ussSchwartzenegger.hull} hull pionts remaining, and there are ${5-i} alien ships still to fight. Do you wish to continue the fight or will you flee the battle? Enter 'Fight' to continue, or 'Retreat' to run away.`)
+                        }
+                    }                
+                    if(playerChoice == 'retreat' && repairs == 0) {
+                        repairs = 1
+                        if(ussSchwartzenegger.hull < 16) {
+                            ussSchwartzenegger.hull += 5
+                        } else {
+                            ussSchwartzenegger.hull = 20
+                        }
+                        ussSchwartzenegger.firepower *= 0.8
+                        menu = true
+                        break
+                    } else if(playerChoice == 'retreat') {
+                        while(confirm.toLowerCase() != 'yes' || confirm.toLowerCase() != 'y') {
+                            confirm = prompt("WARNING: If you retreat a second time, the aliens will decide that you have given up on the defense and attack the planet directly! Are you sure you want to retreat?")
+                            if(confirm.toLowerCase() == 'no' || confirm.toLowerCase() == 'n') {
+                                break
+                            } else if(confirm.toLowerCase() != 'yes' || confirm.toLowerCase() != 'y') {
+                                alert("In a stunning display of cowardice, our hero has decided to flee the battlefield. With no one left to stop them, the aliens press forward and decimate our once beautiful home. The atmosphere ignites and all life within perishes in an instant. The last human alive drifts through space reflecting on what might have been, until at long last the ship's life support fails and cruel reality fades to black.")
+                                lose()
+                                i = 6
+                                break
+                            }
+                        }
+                    }
+                } else {    // inform player of their victory
+                        alert("You have done it!! Agains all odds you have driven back the alien horde and saved the planet from extraterrestrial wrath! You head home to receive a hero's welcome as world leaders gather to honor your great accomplishment this day. In the years to come, your name will be remembered foremost on the list of humanities greatest champions.")
+                        alert("YOU WIN!!")
+                        gameOver = true
                 }
-            } else {    // inform player of their victory
-                    alert("You have done it!! Agains all odds you have driven back the alien horde and saved the planet from extraterrestrial wrath! You head home to receive a hero's welcome as world leaders gather to honor your great accomplishment this day. In the years to come, your name will be remembered at the top of the list of humanities greatest champions.")
-                    alert("YOU WIN!!")
-                    gameOver = true
             }
-        })
+        }
     } else {
         break
     }
