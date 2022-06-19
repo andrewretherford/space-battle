@@ -165,9 +165,9 @@ while(!gameOver) {
                         playerChoice = ''
                         while(playerChoice.toLowerCase() != 'fight' && playerChoice.toLowerCase() !='retreat') {
                             if(repairs == 0){
-                                playerChoice = prompt(`You have destroyed one of the invaders! You currently have ${ussSchwartzenegger.hull} hull pionts remaining, and there are ${5-i} alien ships still to fight.  You may return to base one time to conduct minor repairs, however doing so will deplete your power cells and force you to set your blasters to 80% of full power for the remainder of the battle. Do you wish to continue the fight or will you retreat and regroup? Enter 'Fight' to continue, or 'Retreat' to dock for repairs.`)
+                                playerChoice = prompt(`You have destroyed one of the invaders! You currently have ${ussSchwartzenegger.hull} hull points remaining, and there are ${5-i} alien ships still to fight.  You may return to base one time to conduct minor repairs, however doing so will deplete your power cells and force you to set your blasters to 80% of full power for the remainder of the battle. Do you wish to continue the fight or will you retreat and regroup? Enter 'Fight' to continue, or 'Retreat' to dock for repairs.`)
                             } else {
-                                playerChoice = prompt(`You have destroyed one of the invaders! You currently have ${ussSchwartzenegger.hull} hull pionts remaining, and there are ${5-i} alien ships still to fight. Do you wish to continue the fight or will you flee the battle? Enter 'Fight' to continue, or 'Retreat' to run away.`)
+                                playerChoice = prompt(`You have destroyed one of the invaders! You currently have ${ussSchwartzenegger.hull} hull points remaining, and there are ${5-i} alien ships still to fight. Do you wish to continue the fight or will you flee the battle? Enter 'Fight' to continue, or 'Retreat' to run away.`)
                             }
                         }
                         
