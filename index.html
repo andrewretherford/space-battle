@@ -4,9 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Space Wars</title>
 </head>
 <body>
-    <script src="app.js"></script>
+    <header>
+        <h2>Space Wars</h2>
+        <p>The ultimate battle for the fate of mankind!!</p>
+    </header>
+    <main>
+        <div class="text-box">
+            <p class="game-text">Welcome to the end of the world! The aliens are attacking, and only one hero stands between our precious home and annihilation!<br>You are humanity's last hope!<br><br>Are you prepared to face the alien threat?</p>
+        </div>
+        <button class="yes-button">Hells to the yeah!</button>
+        <button class="no-button">Not on your life!</button>
+        <button class="attack-button hide">Fire!</button>
+        <button class="replay hide">Play Again</button>
+        <label for="player-input" class="player-input hide">Your orders?</label>
+        <input type="text" class="hide" id="player-input" autofocus></input>
+        <button class="input-button hide">Ok</button>
+    </main>
+    <script src="htmlApp.js"></script>
 </body>
 </html>
