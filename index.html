@@ -5,24 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <title>Space Wars</title>
 </head>
 <body>
-    <header>
-        <h2>Space Wars</h2>
-        <p>The ultimate battle for the fate of mankind!!</p>
+    <header>     
+        <h1>Space Wars</h1>
+        <h2>The ultimate battle for the fate of mankind!!</h2>
     </header>
     <main>
         <div class="text-box">
             <p class="game-text">Welcome to the end of the world! The aliens are attacking, and only one hero stands between our precious home and annihilation!<br>You are humanity's last hope!<br><br>Are you prepared to face the alien threat?</p>
         </div>
-        <button class="yes-button">Hells to the yeah!</button>
-        <button class="no-button">Not on your life!</button>
-        <button class="attack-button hide">Fire!</button>
-        <button class="replay hide">Play Again</button>
-        <label for="player-input" class="player-input hide">Your orders?</label>
-        <input type="text" class="hide" id="player-input" autofocus></input>
-        <button class="input-button hide">Ok</button>
+        <div class="buttons">
+            <button class="yes-button">Hell yeah!</button>
+            <button class="no-button">Not on your life!</button>
+            <button class="attack-button hide">Fire!</button>
+            <button class="replay hide">Play Again</button>
+            <label for="player-input" class="player-input hide">Your orders?</label>
+            <input type="text" class="hide" id="player-input" autofocus></input>
+            <button class="input-button hide">Ok</button>
+        </div>
     </main>
     <script src="htmlApp.js"></script>
 </body>

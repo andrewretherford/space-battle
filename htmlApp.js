@@ -99,7 +99,7 @@ function inputBoxHandler(e) {
 function inputButtonHandler() {
     playerResponse = playerInputBox.value
     playerInputBox.value = ''
-
+    
     switch(playerResponse){
         case 'no':
         case 'No':
@@ -117,11 +117,11 @@ function inputButtonHandler() {
             if(repairs == 0){
                 showHidePlayerInput()
                 repairMenu()
+                break
             } else {
                 gameText.innerText = "WARNING: If you retreat a second time, the aliens will decide that you have given up on the defense and attack the planet directly! Are you sure you want to retreat?"
+                break
             }
-            break
-
         case 'yes':
         case 'Yes':
         case 'y':
@@ -185,7 +185,7 @@ noButton.addEventListener('click', noButtonHandler)
 playerInputButton.addEventListener('click', inputButtonHandler)
 playerInputBox.addEventListener('keypress', inputBoxHandler)
 attackButton.addEventListener('click', attackButtonHandler)
-window.addEventListener('keypress', attackButtonKeypressHandler)
+// window.addEventListener('keypress', attackButtonKeypressHandler)
 replayButton.addEventListener('click', replayButtonHandler)
 
 
@@ -268,15 +268,6 @@ const alienSix = new AlienShip(Math.floor(Math.random() * 4 + 3), Math.floor(Mat
 
 const alienFleet = [alienOne, alienTwo, alienThree, alienFour, alienFive, alienSix]
 // console.log(alienFleet)
-
-const alienDivArray = []
-
-for(let i=0; i < alienFleet.length; i++ ) {
-    let div = document.createElement('div')
-    div.classList.add(`alien${i + 1}`)
-    background.appendChild(div)
-    alienDivArray.push(div)
-}
 
 // generate ussSchwartzenegger
 

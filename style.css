@@ -1,5 +1,92 @@
-header {
+body {
     text-align: center;
+    font-size: 2rem;
+    font-family: 'Oswald', sans-serif;
+    background-color: black;
+    background-image: url("/images/galaxyBackground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+    color: gold;
+    font-size: 5rem;
+    font-family: 'Inter', sans-serif;
+    background-color: rgba(0, 0, 0, 0.600);
+    /* border-radius: 30%; */
+    position: relative;
+    max-width: 100vw;
+    min-height: 10vh;
+    max-height: 30vh;
+    margin: 0 auto;
+    margin-top: 0px;
+    top: -8px;
+    left: -8px;
+    padding: 1px;
+    line-height: 70%;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+.text-box {
+    color:rgba(255, 217, 0, 0.8);
+    text-decoration: solid;
+    /* border-radius: 50px; */
+    background-color: rgba(100, 100, 100, 0.8);
+    border: solid gold 3px;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
+.game-text {
+    position: relative;
+    padding: 30px;
+    font-size: 2.5rem;
+}
+
+.buttons {
+    margin: 0 auto;
+    max-width: 70vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+button, .player-input {
+    height: 50px;
+    width: 250px;
+    font-size: 2rem;
+    color: gold;
+    background-color: rgb(100, 100, 100, 0.8);
+    border: solid rgba(255, 217, 0, 0.8) 3px;
+}
+
+.yes-button, .no-button {
+    color: gold;
+    border: solid gold 3px;
+}
+
+.attack-button {
+    color: gold;
+    background-color: rgba(255, 0, 0, 0.700);
+}
+
+/* .player-input {
+    position: relative;
+    width: 250px;
+    background-color: rgb(170, 170, 170, 0.8);
+    border: solid rgba(0, 0, 0, 0.8) 2px;
+} */
+
+#player-input {
+    width: 200px;
+    font-size: 2rem;
+    background-color: rgb(170, 170, 170, 0.8);
+    border: solid rgba(255, 217, 0, 0.8) 3px;
+    outline: 0px;
 }
 
 .hide {
