@@ -73,7 +73,7 @@ function repairMenu() {
         setTimeout(() => {
             showHideYesNoButtons()
             gameText.innerText = "Are you prepared to face the alien threat?"
-        }, 10000)
+        }, 15000)
 }
 
 // define event handlers and listeners
@@ -99,7 +99,7 @@ function inputBoxHandler(e) {
 function inputButtonHandler() {
     playerResponse = playerInputBox.value
     playerInputBox.value = ''
-    
+
     switch(playerResponse){
         case 'no':
         case 'No':
@@ -171,7 +171,7 @@ function attackButtonHandler() {
 }
 
 function attackButtonKeypressHandler(e) {
-    if(e.key === "Enter") {
+    if(e.key === "Enter" && !attackButton.classList.contains('hide')) {
         attackButton.click()
     }
 }
@@ -185,7 +185,7 @@ noButton.addEventListener('click', noButtonHandler)
 playerInputButton.addEventListener('click', inputButtonHandler)
 playerInputBox.addEventListener('keypress', inputBoxHandler)
 attackButton.addEventListener('click', attackButtonHandler)
-// window.addEventListener('keypress', attackButtonKeypressHandler)
+window.addEventListener('keypress', attackButtonKeypressHandler)
 replayButton.addEventListener('click', replayButtonHandler)
 
 
