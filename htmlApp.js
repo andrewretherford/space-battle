@@ -36,7 +36,7 @@ let shipNumber = 0
 let repairs = 0
 let confirm = ''
 let timeout
-let delay = 2000
+let delay = 3000
 const numberDecoration = ['st', 'nd', 'rd', 'th', 'th', 'th']
 
 // define functions

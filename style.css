@@ -55,13 +55,22 @@ h2 {
     justify-content: space-evenly;
 }
 
-button, .player-input {
+button, .player-input, #player-input {
     height: 50px;
     width: 250px;
     font-size: 2rem;
     color: gold;
     background-color: rgb(100, 100, 100, 0.8);
     border: solid rgba(255, 217, 0, 0.8) 3px;
+}
+
+.input-button {
+    height: 56px;
+}
+
+#player-input {
+    height: 49px;
+    padding-left: 20px;
 }
 
 .yes-button, .no-button {
@@ -73,13 +82,6 @@ button, .player-input {
     color: gold;
     background-color: rgba(255, 0, 0, 0.700);
 }
-
-/* .player-input {
-    position: relative;
-    width: 250px;
-    background-color: rgb(170, 170, 170, 0.8);
-    border: solid rgba(0, 0, 0, 0.8) 2px;
-} */
 
 #player-input {
     width: 200px;
