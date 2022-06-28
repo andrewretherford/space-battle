@@ -3,7 +3,7 @@ body {
     font-size: 2rem;
     font-family: 'Oswald', sans-serif;
     background-color: black;
-    background-image: url("./images/galaxyBackground.jpg");
+    background-image: url("./images/galaxy-background.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
