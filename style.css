@@ -2,19 +2,10 @@ body {
     text-align: center;
     font-size: 2rem;
     font-family: 'Oswald', sans-serif;
-    background-color: bl;
-    background-image: url("https://imgur.com/G8H1aFd");
+    background-color: black;
+    background-image: url("./images/galaxyBackground.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.backdrop {
-    width: 100vw;
-}
-
-.backdrop-image {
-    display: block;
-    width: 100%;
 }
 
 header {
