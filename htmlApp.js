@@ -36,7 +36,7 @@ let shipNumber = 0
 let repairs = 0
 let confirm = ''
 let timeout
-let delay = 3000
+let delay = 2000
 const numberDecoration = ['st', 'nd', 'rd', 'th', 'th', 'th']
 
 // define functions
@@ -119,7 +119,7 @@ function inputButtonHandler() {
                 repairMenu()
                 break
             } else {
-                gameText.innerText = "WARNING: If you retreat a second time, the aliens will decide that you have given up on the defense and attack the planet directly! Are you sure you want to retreat?"
+                gameText.innerText = "WARNING: If you retreat a second time, the aliens will decide that you have given up on the defense and attack the planet directly! Are you sure you want to retreat? Enter 'No' to continue the fight, 'Yes' to flee."
                 break
             }
         case 'yes':
