@@ -2,7 +2,7 @@
 
 # Space Battle JS Console Game
 
-![star wars](https://vignette4.wikia.nocookie.net/starwars/images/6/65/Battle_of_Endor.png/revision/latest?cb=20121216165239)
+![star wars](./images/space-wars.png)
 
 Use your knowledge of JS objects, loops, and functions to build a **space battle** game. The game will be programmed for, and played in the Chrome console. You will need to use the built-in `prompt` to get user input, and you may use `console.logs` or `alerts` to relay information to the user.
 

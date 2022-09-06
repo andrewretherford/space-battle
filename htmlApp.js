@@ -1,5 +1,3 @@
-// console.log('app.js')
-
 // Parameters
 // Six alien ships
 // Alien ships attack one at a time, waiting for the outcome of the previous battle before deploying the next ship
@@ -76,7 +74,7 @@ function repairMenu() {
         }, 15000)
 }
 
-// define event handlers and listeners
+// define event handlers
 
 function yesButtonHandler() {
     showHideYesNoButtons()
@@ -180,6 +178,8 @@ function replayButtonHandler() {
     location.reload()
 }
 
+// define event listeners
+
 yesButton.addEventListener('click', yesButtonHandler)
 noButton.addEventListener('click', noButtonHandler)
 playerInputButton.addEventListener('click', inputButtonHandler)
@@ -267,9 +267,7 @@ const alienFive = new AlienShip(Math.floor(Math.random() * 4 + 3), Math.floor(Ma
 const alienSix = new AlienShip(Math.floor(Math.random() * 4 + 3), Math.floor(Math.random() * 3 + 2), Math.floor(Math.random() * 3 + 6) * 0.1)
 
 const alienFleet = [alienOne, alienTwo, alienThree, alienFour, alienFive, alienSix]
-// console.log(alienFleet)
 
 // generate ussSchwartzenegger
 
 const ussSchwartzenegger = new Schwartzenegger(20, 5, .7)
-// console.log(ussSchwartzenegger)
